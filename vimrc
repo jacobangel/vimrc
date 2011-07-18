@@ -11,7 +11,6 @@ call pathogen#runtime_append_all_bundles()
 """""""""""""""""""""""""""""" 
 " Take out the direction keys.
 """""""""""""""""""""""""""""" 
-set softtabstop=4
 noremap  <Up> ""
 noremap! <Up> <Esc>
 noremap  <Down> ""
@@ -30,10 +29,13 @@ set smarttab
 set expandtab
 set autoindent
 set softtabstop=4
+set history=700
+set ruler
 
 """""""""""""""""""""""""""""" 
 " Filetype stuff
 """""""""""""""""""""""""""""" 
+syntax on
 filetype on
 filetype plugin on
 filetype indent on
@@ -50,15 +52,12 @@ set omnifunc=pythoncomplete#Complete
 inoremap <Nul> <C-x><C-o>
 
 """""""""""""""""""""""""""""" 
-" Wrap at 72 chars for comments.
-"""""""""""""""""""""""""""""" 
-set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
-
-"""""""""""""""""""""""""""""" 
-" Highlight end of line whitespace.
+" Highlighting Stuff
 """""""""""""""""""""""""""""" 
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+set hlsearch
+set incsearch
 
 """""""""""""""""""""""""""""" 
 " Colorscheme Setup
@@ -67,8 +66,9 @@ if ! has("gui_running")
     set t_Co=256
 endif
 " feel free to choose :set background=light for a different style
-set background=dark
-colorscheme peaksea
+"set background=dark
+"colorscheme peaksea
+colorscheme 3dglasses
 
 """""""""""""""""""""""""""""" 
 " => bufExplorer plugin 
